@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <script src="./assets/scripts/script.js" defer></script>
+    <title>Formulário de Registro</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="contente">
+        <h1>Formulário de Registro</h1>
+        <div class="form">
+            <div class="form-image">
+                <img src="./assets/images/images.svg" alt="">
+            </div>
+
+            <form>
+                <div class="input">
+                    <div class="label-input">
+                        <input type="text" id="name" required>
+                        <label for="name">Nome</label>
+                    </div>
+                    <small></small>
+                </div>
+                <div class="input">
+                    <div class="label-input">
+                        <input type="text" id="last-name" required>
+                        <label for="last-name">Sobrenome</label>
+                    </div>
+                    <small></small>
+                </div>
+
+                <div class="input">
+                    <div class="label-input">
+                        <input type="text" id="email" required>
+                        <label for="email">E-mail</label>
+                    </div>
+                    <small></small>
+                </div>
+
+                <div class="input">
+                    <div class="label-input">
+                        <input type="password" id="password" maxlength="25" required>
+                        <label for="password">Senha</label>
+                        <i class="hide fa-solid fa-eye"></i>
+                        <!-- fa-eye / fa-eye-slash-->
+                    </div>
+                    <small></small>
+                </div>
+                <div class="input">
+                    <div class="label-input">
+                        <input type="password" id="confirm-password" maxlength="25" required>
+                        <label for="confirm-password">Confirmar</label>
+                        <i class="hide fa-solid fa-eye"></i>
+                    </div>
+                    <small></small>
+                </div>
+                <button type="submit" class="submit">Registrar</button>
+
+            </form>
+
+        </div>
+        <p>FORMULÁRIO 100% VÁLIDO</p>
+    </div>
+</body>
+</html>
