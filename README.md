@@ -2,7 +2,7 @@
 
 ![Imagem do projeto](./assets/images/demonstracao-do-projeto.gif)
 
-### [Visitar Projeto](#)
+### [Visitar Projeto](https://formulario-de-registro-tau.vercel.app/)
 
 ---
 
