@@ -27,9 +27,19 @@ submit.addEventListener('click', (button) => {
 })
 
 
+// Função debounce
+function debounce(func, wait) {
+	let timer = null;
+	return function() {
+		clearTimeout(timer);
+		timer = setTimeout(func, wait);
+	}
+}
+
+
 
 // Função que valida o nome
-firstName.addEventListener('input', nameValidation = () => {
+firstName.addEventListener('input', debounce(nameValidation = () => {
     const nameValue = firstName.value
 
     if (!nameValue || nameValue[0].includes(' ')) {
@@ -38,15 +48,21 @@ firstName.addEventListener('input', nameValidation = () => {
         return
     }
 
+    if (nameValue.length < 2) {
+        setError(firstName, 'Insira um nome válido')
+
+        return
+    }
+
     setSuccess(firstName)
 
     return true
-})
+}, 300))
 
 
 
 // Função que valida o sobrenome
-lastName.addEventListener('input', lastNameValidation = () => {
+lastName.addEventListener('input', debounce(lastNameValidation = () => {
     const lastNameValue = lastName.value
 
     if (!lastNameValue || lastNameValue[0].includes(' ')) {
@@ -55,15 +71,21 @@ lastName.addEventListener('input', lastNameValidation = () => {
         return
     }
 
+    if (lastNameValue.length < 2) {
+        setError(lastName, 'Insira um nome válido')
+
+        return
+    }
+
     setSuccess(lastName)
 
     return true
-})
+}, 300))
 
 
 
 // Função que válida o e-mail
-email.addEventListener('input', emailValidation = () => {
+email.addEventListener('input', debounce(emailValidation = () => {
     const emailValue = email.value
     const validation = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
     const validatedEmail = validation.test(emailValue)
@@ -77,12 +99,12 @@ email.addEventListener('input', emailValidation = () => {
     setSuccess(email)
 
     return true
-})
+}, 300))
 
 
 
 // Função que válida a senha
-password.addEventListener('input', passwordValidation = () => {
+password.addEventListener('input', debounce(passwordValidation = () => {
     const passwordValue = password.value
 
     if (passwordValue.length < 8) {
@@ -94,12 +116,12 @@ password.addEventListener('input', passwordValidation = () => {
     setSuccess(password)
 
     return true
-})
+}, 300))
 
 
 
 // Função que válida a confirmação de senha
-confirmPassword.addEventListener('input', confirmPasswordValidation = () => {
+confirmPassword.addEventListener('input', debounce(confirmPasswordValidation = () => {
     const passwordValue = password.value
     const confirmPasswordValue = confirmPassword.value
     if (confirmPasswordValue.length < 8) {
@@ -117,7 +139,7 @@ confirmPassword.addEventListener('input', confirmPasswordValidation = () => {
     setSuccess(confirmPassword)
 
     return true
-})
+}, 300))
 
 
 
